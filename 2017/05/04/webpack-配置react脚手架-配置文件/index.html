@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>mysecond | myblog</title>
+  <title>webpack 配置react脚手架 配置文件 | myblog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -172,29 +172,50 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2017-01-29T11:18:20.000Z" itemprop="datePublished">
-          2017-01-29
+      <time datetime="2017-05-04T13:46:12.000Z" itemprop="datePublished">
+          2017-05-04
       </time>
     
 </span>
-                <h1>mysecond</h1>
+                <h1>webpack 配置react脚手架 配置文件</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p><strong>**</strong>结合国际化 房管局泛海国际好</p>
+      		<p>出于省事的目的，不用自己去记。 搬运来，算是记个笔记<br>英文地址，猛击<a href="http://www.pro-react.com/materials/appendixA/" target="_blank" rel="external">http://www.pro-react.com/materials/appendixA/</a><br>中文地址，猛击<a href="http://www.jianshu.com/p/42e11515c10f" target="_blank" rel="external">http://www.jianshu.com/p/42e11515c10f</a></p>
+<p>PS.在配置loaders的loader关键字时加上后面的“-loader”后缀。新版做的规定，网上之前的文章并没有提及，算是个坑。webpack配置是做简单的配置，根据需要可以自己修改。<br>文件夹基本结构</p>
+<p>安装 webpack</p>
+<p>确保 系统中已安装node.js 通过npm安装 webpack，新建文件（例如 reactapp）cd命令进入该文件夹</p>
+<p>//全局安装<br>npm install -g webpack<br>//安装到你的项目目录<br>npm install –save-dev webpack<br>初始化 生成package.json文件<br>终端中使用npm init命令可以自动创建</p>
+<p>npm init<br>输入这个命令后，终端会提示填写名称，描述，作者等信息，回车默认即可。<br>package.json文件最终版本如下</p>
+<p>var path = require(‘path’);<br>var webpack = require(‘webpack’);  //加载webpack依赖包<br>var HtmlWebpackPlugin = require(‘html-webpack-plugin’);<br>var ExtractTextPlugin = require(‘extract-text-webpack-plugin’);<br>module.exports = {<br>    devtool: ‘eval-source-map’,<br>      entry:  <strong>dirname + “/app/main.js”,<br>     output: {<br>          path: </strong>dirname + “/build”,<br>       //输出文件<br>     filename: “[name]-[hash].js”<br>},<br>  devServer: {<br>   contentBase: “./build”,//本地服务器所加载的页面所在的目录<br>        colors: true,//终端中输出结果为彩色<br>    historyApiFallback: true,//不跳转<br>        inline: true,//实时刷新<br>           hot: true<br>} ,<br>   module: {<br>     loaders: [<br>        {<br>            test: /.js?$/,<br>            exclude: /node_modules/,<br>            loader: ‘babel-loader’,<br>         },<br>        { test: /.json$/,loader: “json-loader” },<br>        { test: /.css$/, loader: ‘style-loader!css-loader’ },  //分离js 和css文件 ExtractTextPlugin.extract({ fallback: ‘style-loader’, use: ‘css-loader’ })//<br>        //打包css文件<br>        { test: /.scss$/, loader: ‘style-loader!css-loader!sass-loader’}, //分离js 和css文件 ExtractTextPlugin.extract({ fallback: ‘style-loader’, use: ‘css-loader!sass-loader’ })//<br>        //编译sass文件<br>        { test: /.(png|jpg)$/, loader: ‘url-loader?limit=8192’}<br>        //对图片进行打包<br>       ]<br>},<br>   postcss: [<br>       require(‘autoprefixer’)//调用autoprefixer插件  ],<br>   resolve: {<br>      //自动扩展文件后缀名<br>    extensions: [‘.js’, ‘.json’, ‘.scss’, ‘.css’,’.jsx’]<br>  } ,<br>   plugins: [<br>    new HtmlWebpackPlugin({<br>      template: __dirname + “/app/index.html”<br>}),<br>    new webpack.HotModuleReplacementPlugin(),<br>    new ExtractTextPlugin(“[name]-[hash].css”),<br>    new webpack.optimize.UglifyJsPlugin(),<br>    new ExtractTextPlugin(“style.css”)<br>    ]<br>};<br>.babelrc文件</p>
+<p>{<br>“presets”: [“react”, “es2015”],<br>“env”: {<br>“development”: {<br>“plugins”: [[“react-transform”, {<br>   “transforms”: [{<br>     “transform”: “react-transform-hmr”,<br>       “imports”: [“react”],<br>        “locals”: [“module”]<br>   }]<br> } ] ]<br>} } }<br>安装babel</p>
+<p>//安装<br>npm install –save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react<br>插件部分</p>
+<p>安装postcss-loader 和 autoprefixer（自动添加前缀的插件）</p>
+<p>//安装<br>npm install –save-dev postcss-loader autoprefixer<br>安装css-loader 和 style-loader</p>
+<p>//安装<br>npm install –save-dev style-loader css-loader<br>Hot Module Replacement（HMR）是webpack里很有用的一个插件，修改组件代码后，自动刷新实时预览修改后的效果<br>安装react-transform-hmr 修改babel文件</p>
+<p>//安装<br>npm install –save-dev babel-plugin-react-transform react-transform-hmr<br>HtmlWebpackPlugin<br>作用是依据一个简单的模板，生成最终的Html5文件，文件中自动引用打包后的JS文件。每次编译在文件名中插入不同的哈希值</p>
+<p>//安装<br>npm install –save-dev html-webpack-plugin<br>优化插件</p>
+<p>OccurenceOrder 和 UglifyJS plugins 都是内置插件</p>
+<p>npm install –save-dev extract-text-webpack-plugin<br>eslint babel-eslint eslint-plugin-react eslint-plugin-babel 纠错工具</p>
+<p>中间件服务器脚本</p>
+<p>var path = require(‘path’);<br>var express = require(‘express’);<br>var webpack = require(‘webpack’);<br>var config = require(‘./webpack.config’);<br>var app = express();<br>var compiler = webpack(config);</p>
+<p>var webpackDevOptions = {<br>noInfo: true,<br>historyApiFallback: true,<br>publicPath: config.output.publicPath,<br> headers: {<br>‘Access-Control-Allow-Origin’: ‘*’<br>}<br>};</p>
+<p>app.use(require(‘webpack-dev-middleware’)(compiler, webpackDevOptions));<br>app.use(require(‘webpack-hot-middleware’)(compiler));</p>
+<p>app.get(‘/‘, function(req, res) {<br> res.sendFile(path.join(__dirname, ‘index.html’));<br>});</p>
+<p>app.listen(8080, ‘localhost’, function(err) {<br>if (err) {<br>console.log(err);<br>return;<br>}</p>
+<p>console.log(‘Listening at <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>‘);<br>});<br>使用 ESLint</p>
+<p>npm install –save-dev babel-eslint eslint eslint-plugin-react<br>配置 .eslintrc文件</p>
+<p>{<br>  “extends”: “eslint:recommended”, //可选”eslint-config-airbnb”<br>  “ecmaFeatures”: {<br>  “jsx”: true,<br>  “modules”: true<br>  },<br>  “env”: {<br>  “browser”: true,<br>  “node”: true,<br>  “es6”: true<br>  },<br>  “parser”: “babel-eslint”,<br>  “rules”: {<br>  “strict”: 0,<br>  “valid-jsdoc”: 2,</p>
+<p>  “react/jsx-uses-react”: 2,<br>  “react/jsx-uses-vars”: 2,<br>  “react/react-in-jsx-scope”: 2<br> },<br>  “plugins”: [<br>  “react”<br>  ]<br>}</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2017/05/04/webpack-配置react脚手架-配置文件/" style="float: left;">
-        ← webpack 配置react脚手架 配置文件
-    </a>
     
-    
-    <a class="pull-right" href="/2017/01/28/hello-world/">
-        2017读书计划 →
+    <a class="pull-right" href="/2017/01/29/mysecond/">
+        mysecond →
     </a>
     
 </nav>
