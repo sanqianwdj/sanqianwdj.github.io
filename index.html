@@ -1,380 +1,738 @@
-<!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
+<!doctype html>
 
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="myblog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="myblog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="myblog">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
   <title>myblog</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="myblog">
-    <meta name="author" content="wangdj">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
-
-    <link rel="alternate" href="/atom.xml" title="myblog" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
-
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
-  
-  
-  
-
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
 </head>
 
-<!--
-<body class="home-template">
--->
-<body id="index" class="lightnav animsition">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-      <!-- ============================ Off-canvas navigation =========================== -->
+  
 
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
-            
-            
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
-                    
-                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
     
-    <!-- ============================ END Off-canvas navigation =========================== -->
+  
 
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
 
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">myblog</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
-                            
-                            
-                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
-                            
-                            
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.png) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>人生而自由，却无往不在枷锁之中。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
-<section id="intro">
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/05/04/webpack-配置react脚手架-配置文件/">webpack 配置react脚手架 配置文件</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-05-04T13:46:12.000Z" itemprop="datePublished">
-          2017-05-04
-      </time>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        出于省事的目的，不用自己去记。 搬运来，算是记个笔记英文地址，猛击http://www.pro-react.com/materials/appendixA/中文地址，猛击http://www.jianshu.com/p/42e11515c10f
-PS.在配置loaders的loader关键字时加上后面的“-loader”后缀。新版做的规定，网上之前的文章并没有提及，算是个坑。webpack配置是做简单的配置，根据需要可以自己修改。文件夹
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/05/04/webpack-配置react脚手架-配置文件/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/28/hello-world/">2017读书计划</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-28T09:53:57.445Z" itemprop="datePublished">
-          2017-01-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                          虽说是写的是计划，可是以后发生的事情多少都有一些自己无法掌控的事情。就拿这个来说，本打算放假回家之后再来写，临时改变了想法。算是在回家之前再省掉一件事情。  读书不是目的，只是达到目的的一种手段而已。获取知识抑或是闲暇时光的消遣都可以，我是前者。  16年买了20几本书，在社区兑换了几本，基本集中在9月份以后，现在已看完其中一半吧。希望17年1季度再干掉一部分。.  涉及前端的书较多一些，本人兴趣，so简单列一下。《深入react技
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/28/hello-world/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">myblog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>情愿不自由，便是自由了。</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
 
       
-<!-- ============================ Footer =========================== -->
+    </ul>
+  
 
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By wangdj. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/webpack-配置react脚手架-配置文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/04/webpack-配置react脚手架-配置文件/" itemprop="url">webpack 配置react脚手架 配置文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-04T21:46:12+08:00">
+                2017-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-</footer>
+      </header>
+    
 
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-<!-- Resizable 'on-demand' full-height hero -->
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>出于省事的目的，不用自己去记。 搬运来，算是记个笔记<br>英文地址，猛击<a href="http://www.pro-react.com/materials/appendixA/" target="_blank" rel="external">http://www.pro-react.com/materials/appendixA/</a><br>中文地址，猛击<a href="http://www.jianshu.com/p/42e11515c10f" target="_blank" rel="external">http://www.jianshu.com/p/42e11515c10f</a></p>
+<p>PS.在配置loaders的loader关键字时加上后面的“-loader”后缀。新版做的规定，网上之前的文章并没有提及，算是个坑。webpack配置是做简单的配置，根据需要可以自己修改。<br>文件夹基本结构</p>
+<p>安装 webpack</p>
+<p>确保 系统中已安装node.js 通过npm安装 webpack，新建文件（例如 reactapp）cd命令进入该文件夹</p>
+<p>//全局安装<br>npm install -g webpack<br>//安装到你的项目目录<br>npm install –save-dev webpack<br>初始化 生成package.json文件<br>终端中使用npm init命令可以自动创建</p>
+<p>npm init<br>输入这个命令后，终端会提示填写名称，描述，作者等信息，回车默认即可。<br>package.json文件最终版本如下</p>
+<p>`var path = require(‘path’);<br>var webpack = require(‘webpack’);  //加载webpack依赖包<br>var HtmlWebpackPlugin = require(‘html-webpack-plugin’);<br>var ExtractTextPlugin = require(‘extract-text-webpack-plugin’);<br>module.exports = {<br>    devtool: ‘eval-source-map’,<br>      entry:  <strong>dirname + “/app/main.js”,<br>     output: {<br>          path: </strong>dirname + “/build”,<br>       //输出文件<br>     filename: “[name]-[hash].js”<br>},<br>  devServer: {<br>   contentBase: “./build”,//本地服务器所加载的页面所在的目录<br>        colors: true,//终端中输出结果为彩色<br>    historyApiFallback: true,//不跳转<br>        inline: true,//实时刷新<br>           hot: true<br>} ,<br>   module: {<br>     loaders: [<br>        {<br>            test: /.js?$/,<br>            exclude: /node_modules/,<br>            loader: ‘babel-loader’,<br>         },<br>        { test: /.json$/,loader: “json-loader” },<br>        { test: /.css$/, loader: ‘style-loader!css-loader’ },  //分离js 和css文件 ExtractTextPlugin.extract({ fallback: ‘style-loader’, use: ‘css-loader’ })//<br>        //打包css文件<br>        { test: /.scss$/, loader: ‘style-loader!css-loader!sass-loader’}, //分离js 和css文件 ExtractTextPlugin.extract({ fallback: ‘style-loader’, use: ‘css-loader!sass-loader’ })//<br>        //编译sass文件<br>        { test: /.(png|jpg)$/, loader: ‘url-loader?limit=8192’}<br>        //对图片进行打包<br>       ]<br>},<br>   postcss: [<br>       require(‘autoprefixer’)//调用autoprefixer插件  ],<br>   resolve: {<br>      //自动扩展文件后缀名<br>    extensions: [‘.js’, ‘.json’, ‘.scss’, ‘.css’,’.jsx’]<br>  } ,<br>   plugins: [<br>    new HtmlWebpackPlugin({<br>      template: __dirname + “/app/index.html”<br>}),<br>    new webpack.HotModuleReplacementPlugin(),<br>    new ExtractTextPlugin(“[name]-[hash].css”),<br>    new webpack.optimize.UglifyJsPlugin(),<br>    new ExtractTextPlugin(“style.css”)<br>    ]<br>};<br>.babelrc文件</p>
+<p>{<br>“presets”: [“react”, “es2015”],<br>“env”: {<br>“development”: {<br>“plugins”: [[“react-transform”, {<br>   “transforms”: [{<br>     “transform”: “react-transform-hmr”,<br>       “imports”: [“react”],<br>        “locals”: [“module”]<br>   }]<br> } ] ]<br>} } }  `<br>安装babel</p>
+<p>//安装<br>npm install –save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react<br>插件部分</p>
+<p>安装postcss-loader 和 autoprefixer（自动添加前缀的插件）</p>
+<p>//安装<br>npm install –save-dev postcss-loader autoprefixer<br>安装css-loader 和 style-loader</p>
+<p>//安装<br>npm install –save-dev style-loader css-loader<br>Hot Module Replacement（HMR）是webpack里很有用的一个插件，修改组件代码后，自动刷新实时预览修改后的效果<br>安装react-transform-hmr 修改babel文件</p>
+<p>//安装<br>npm install –save-dev babel-plugin-react-transform react-transform-hmr<br>HtmlWebpackPlugin<br>作用是依据一个简单的模板，生成最终的Html5文件，文件中自动引用打包后的JS文件。每次编译在文件名中插入不同的哈希值</p>
+<p>//安装<br>npm install –save-dev html-webpack-plugin<br>优化插件</p>
+<p>OccurenceOrder 和 UglifyJS plugins 都是内置插件</p>
+<p>npm install –save-dev extract-text-webpack-plugin<br>eslint babel-eslint eslint-plugin-react eslint-plugin-babel 纠错工具</p>
+<p>中间件服务器脚本</p>
+<p>var path = require(‘path’);<br>var express = require(‘express’);<br>var webpack = require(‘webpack’);<br>var config = require(‘./webpack.config’);<br>var app = express();<br>var compiler = webpack(config);</p>
+<p>var webpackDevOptions = {<br>noInfo: true,<br>historyApiFallback: true,<br>publicPath: config.output.publicPath,<br> headers: {<br>‘Access-Control-Allow-Origin’: ‘*’<br>}<br>};</p>
+<p>app.use(require(‘webpack-dev-middleware’)(compiler, webpackDevOptions));<br>app.use(require(‘webpack-hot-middleware’)(compiler));</p>
+<p>app.get(‘/‘, function(req, res) {<br> res.sendFile(path.join(__dirname, ‘index.html’));<br>});</p>
+<p>app.listen(8080, ‘localhost’, function(err) {<br>if (err) {<br>console.log(err);<br>return;<br>}</p>
+<p>console.log(‘Listening at <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>‘);<br>});<br>使用 ESLint</p>
+<p>npm install –save-dev babel-eslint eslint eslint-plugin-react<br>配置 .eslintrc文件</p>
+<p>{<br>  “extends”: “eslint:recommended”, //可选”eslint-config-airbnb”<br>  “ecmaFeatures”: {<br>  “jsx”: true,<br>  “modules”: true<br>  },<br>  “env”: {<br>  “browser”: true,<br>  “node”: true,<br>  “es6”: true<br>  },<br>  “parser”: “babel-eslint”,<br>  “rules”: {<br>  “strict”: 0,<br>  “valid-jsdoc”: 2,</p>
+<p>  “react/jsx-uses-react”: 2,<br>  “react/jsx-uses-vars”: 2,<br>  “react/react-in-jsx-scope”: 2<br> },<br>  “plugins”: [<br>  “react”<br>  ]<br>}</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/28/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangdj">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="myblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/28/hello-world/" itemprop="url">2017读书计划</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-28T17:53:57+08:00">
+                2017-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>  虽说是写的是计划，可是以后发生的事情多少都有一些自己无法掌控的事情。就拿这个来说，本打算放假回家之后再来写，临时改变了想法。算是在回家之前再省掉一件事情。<br>  读书不是目的，只是达到目的的一种手段而已。获取知识抑或是闲暇时光的消遣都可以，我是前者。<br>  16年买了20几本书，在社区兑换了几本，基本集中在9月份以后，现在已看完其中一半吧。希望17年1季度再干掉一部分。.<br>  涉及前端的书较多一些，本人兴趣，so简单列一下。<br>《深入react技术栈》前端三分天下的框架之一，不论怎样还是要看看。<br>《深入浅出nodejs》这书看了一半，找个机会再仔细看完下半部分。<br>《javascript设计模式》看了几章，<br>还有双11购买的几本，塑封还没有拆开，如下<br>《汉字设计与应用》<br>《匠人精神》<br>《cinema4d完全学习手册》这本大概看了一遍，软件熟悉了一下有必要再看看，软件还是要多练手，这个暂且不表。<br>《angular2权威指南》这本尚未出版，计划中。<br>《你不知道的javascript下卷）》尚未出版。<br>《SQL必知必会》，这本没什么感觉纯粹觉得便宜凑单买的，既然买了一定要看完。<br>《中村俊辅：任意球大师的察知力》<br>《Python编程：从入门到实践》<br>《Flask Web开发：基于Python的Web应用开发实战》<br>《github实践》<br>《智取程序员面试》<br>《网络是怎样连接的》<br>《图解HTTP》这两本电子版<br>既然列出来了，一定会去看，其他的书就暂时不列举了。既然是计划就不搞得像个购物清单的样子了。<br>生活当中有意思很多，书也很多不止于技术书。<br>还有小说 ，希望有闲之余把丹布朗的几本都看下。两天时间看完了两本，应该不成问题。<br>徐浩峰的小说除了《道士下山》《一个人的武林》想看看《武士会》《刀背藏身》<br>很遗憾金庸先生的小说一部都没看过，可以搞一下。<br>喜欢推理小说日本欧美都有看过些，有相同爱好的朋友要是看到了，可以多多推荐，在此感谢， l流水账一般倘若有朋友看到此，希望不会令您觉得浪费了时光。<br>在次感谢。 2017.1.25</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="wangdj" />
+          <p class="site-author-name" itemprop="name">wangdj</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangdj</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
 <script type="text/javascript">
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-
-    resizeHero();
-
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
-
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
 </script>
 
-<!-- Initiate flexslider plugin -->
-<script type="text/javascript">
-    $(document).ready(function($) {
-      (function(){
-        console.log('font');
-        var getCss = function(path) {
-          var head = document.getElementsByTagName('head')[0];
-          link = document.createElement('link');
-          link.href = path;
-          link.rel = 'stylesheet';
-          link.type = 'text/css';
-          head.appendChild(link);
-        };
-        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
-      })();
-      $('.flexslider').flexslider({
-        animation: "fade",
-        prevText: "",
-        nextText: "",
-        directionNav: true
-      });
-    });
-</script>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
